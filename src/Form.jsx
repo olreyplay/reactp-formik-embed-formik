@@ -14,7 +14,25 @@ const Form = () => {
     },
   });
 
-  return <div>Form</div>;
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <input
+        onChange={formik.handleChange}
+        value={formik.values.username}
+        type="text"
+        name="username"
+        placeholder="Name"
+      />
+      <input
+        onChange={formik.handleChange}
+        value={formik.values.occupation}
+        type="text"
+        name="occupation"
+        placeholder="Occupation"
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
 };
 
 export default Form;
